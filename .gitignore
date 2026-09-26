@@ -1,0 +1,14 @@
+/node_modules
+/.next/
+/out/
+/build
+.env
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.playwright-mcp/
+
+# Local design reference images (not site assets, not for git)
+/IMAGES TO USE/
+/REFERENCE IMAGES/
