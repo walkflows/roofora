@@ -10,6 +10,7 @@ npm run dev       # http://localhost:3000
 npm run build     # production build
 npm run start     # run the production build locally
 npm run lint      # ESLint
+npm run automation:test   # offline checks for the lead automation (no accounts needed)
 ```
 
 ## Everything you'll need to update before launch
@@ -20,9 +21,11 @@ npm run lint      # ESLint
 
 **Photos** — `lib/images.ts` is the single manifest mapping every photo used on the page to its file and alt text. Swap a photo by replacing the file in `public/images/` (keep the same filename) or by pointing the import at a new file.
 
-**Enquiry form delivery** — `app/api/enquiry/route.ts` validates submissions server-side but does not yet send anywhere (no email/CRM is connected). It currently only logs to the server console. Wire up a real provider (e.g. Resend, SendGrid, or a CRM webhook) at the marked spot before launch.
+**Enquiry form and lead automation** — the form posts to `/api/enquiry`, which validates on the server and hands the enquiry to n8n, which saves it to Airtable and runs the follow-up automation (acknowledgement, inspections, quotes, reminders). The visitor sees success **only after** the lead is confirmed saved. Roof photos are uploaded separately afterwards (`/api/enquiry/photo`). Nothing works until the n8n/Airtable side is connected: without `N8N_ROOFORA_WEBHOOK_BASE` / `N8N_ROOFORA_WEBHOOK_SECRET` the form says submission is unavailable and nothing is faked. Everything about the automation — setup, field mapping, tests, recovery — is in [`automation/`](automation/README.md). Environment variable names are in `.env.example` (values stay in `.env.local` / Vercel).
 
 **SEO / indexing** — `app/layout.tsx`, `app/robots.ts` and `app/sitemap.ts` currently block indexing (`robots: { index: false }`) and use a placeholder domain (`https://roofora.example.com`). Update the domain and flip indexing on once the real domain and business details are confirmed.
+
+**Privacy policy** — the enquiry form should link to one; none exists yet. Add a page and link it from the form and footer before launch.
 
 **Policies** — the footer shows "Privacy Policy" and "Terms" as plain text (not links), since no policy pages exist yet in this single-page build. Turn them into real anchors/pages once that content exists.
 
@@ -32,6 +35,8 @@ npm run lint      # ESLint
 - `components/sections/` — one component per homepage section.
 - `components/ui/` — shared building blocks (Button, Reveal/WordReveal scroll animations, BeforeAfterSlider, TestimonialCarousel, Accordion, Marquee, Lightbox).
 - `components/layout/` — Header, MobileMenu, Footer.
+- `components/enquiry/EnquiryForm.tsx` — the enquiry form (photos, validation, retries). Shared rules/wording: `lib/enquiry/contract.ts`; server-only helpers: `lib/server/`.
+- `app/api/enquiry`, `app/api/enquiry/photo`, `app/api/quote`, `app/quote/[token]` — server endpoints and the customer quote page.
 - `components/chat/ChatWidget.tsx` — bottom-left quick-help widget.
 - `lib/config.ts` — contact details, nav links, social links.
 - `lib/content.ts` — services, process steps, projects, reviews, FAQs.

@@ -1,0 +1,12 @@
+{
+  "_about": "SYNTHETIC. leadRecordId comes from the enquiry response. dataBase64 here is a placeholder: use a real small JPG/PNG/WebP (the website shrinks photos to 3.5 MB or less before sending).",
+  "submissionId": "3f2b8c1e-5d4a-4b6c-9e7f-0a1b2c3d4e5f",
+  "leadRecordId": "recXXXXXXXXXXXXXX",
+  "enquiryRef": "RF-3F2B8C1E",
+  "slot": 1,
+  "filename": "RF-3F2B8C1E-photo-1.jpg",
+  "contentType": "image/jpeg",
+  "size": 900,
+  "dataBase64": "<base64 of a small test image>",
+  "retry": false
+}

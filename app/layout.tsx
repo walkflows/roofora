@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/config";
 
-const jakarta = Plus_Jakarta_Sans({
+// Self-hosted (SIL Open Font License, see app/fonts/): the build never downloads fonts, so it works the same on
+// every machine and on Vercel, and visitors' browsers never contact Google Fonts.
+const jakarta = localFont({
+  src: "./fonts/PlusJakartaSans-latin-variable.woff2",
   variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: "200 800",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://roofora.example.com"),
+  // Set ROOFORA_SITE_URL (server env) to the real address once one is authorised; defaults to the existing project URL.
+  metadataBase: new URL(process.env.ROOFORA_SITE_URL || "https://roofora-rose.vercel.app"),
   title: {
     default: `${SITE_NAME} | Roofing You Can Rely On`,
     template: `%s | ${SITE_NAME}`,

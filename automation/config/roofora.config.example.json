@@ -1,0 +1,53 @@
+{
+  "_about": "Copy to roofora.config.local.json (git-ignored) and fill in. Contains IDs only — never secrets. The committed workflow exports in automation/workflows are always built from THIS example file, so they carry placeholders.",
+  "n8nBaseUrl": "https://n8n.walkflow.tech",
+  "airtableBaseId": "appREPLACEWITHBASE",
+  "workflowTimezone": "Europe/London",
+  "telegramChatId": "REPLACE_WITH_ROOFORA_CHAT_ID",
+  "sweepCron": "0 9 * * 1-6",
+  "gmailPollMinutes": 5,
+  "gmailQuery": "in:inbox -from:me",
+  "_gmailQuery_about": "Gmail search used by reply detection. For tests it is narrowed to the test sender, e.g. \"in:inbox from:test@example.com newer_than:1d\".",
+  "credentials": {
+    "airtable": {
+      "id": "REPLACE",
+      "name": "Airtable (existing, reused for ROOFORA)"
+    },
+    "gmail": {
+      "id": "REPLACE",
+      "name": "ROOFORA Gmail"
+    },
+    "googleCalendar": {
+      "id": "REPLACE",
+      "name": "ROOFORA Google Calendar"
+    },
+    "telegram": {
+      "id": "REPLACE",
+      "name": "ROOFORA Telegram Bot"
+    },
+    "websiteWebhook": {
+      "id": "REPLACE",
+      "name": "ROOFORA Website Webhook"
+    },
+    "staffAccess": {
+      "id": "REPLACE",
+      "name": "ROOFORA Staff Access"
+    }
+  },
+  "_settingsSeed_about": "settingsSeed = values written into the Airtable Settings row the FIRST time Setup Check creates it (never overwrites an existing row). Demo values only; keep real addresses in the git-ignored local config.",
+  "settingsSeed": {
+    "Business Timezone": "Europe/London",
+    "Customer Emails Enabled": false,
+    "Test Mode": true
+  },
+  "workflowIds": {
+    "sendEmail": "REPLACE_AFTER_IMPORT",
+    "errorHandler": "REPLACE_AFTER_IMPORT"
+  },
+  "enable": {
+    "replyDetection": false,
+    "dailySweep": false
+  },
+  "alertPrefix": "",
+  "_alertPrefix_about": "Text put in front of every Telegram alert. Local test config uses \"ROOFORA — TEST · \"; clear it for production."
+}

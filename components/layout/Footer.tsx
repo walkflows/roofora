@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import {
@@ -128,11 +129,12 @@ export function Footer() {
 
       <div className="relative z-10 border-t border-white/10 bg-ink">
         <div className="container-roofora flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/55 sm:flex-row">
-          <p>© {new Date().getFullYear()} ROOFORA. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ROOFORA — a fictional business for a portfolio demo.</p>
           <div className="flex items-center gap-5">
-            {/* No standalone policy pages exist yet in this single-page
-                build — shown as plain text rather than a dead link. */}
-            <span>Privacy Policy</span>
+            <Link href="/privacy" className="underline-offset-2 transition-colors hover:text-white hover:underline">
+              Privacy notice (demo)
+            </Link>
+            {/* No Terms page exists yet: shown as plain text rather than a dead link. */}
             <span>Terms</span>
           </div>
         </div>

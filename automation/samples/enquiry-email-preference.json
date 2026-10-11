@@ -1,0 +1,26 @@
+{
+  "_about": "SYNTHETIC test data. POST to <n8n>/webhook-test/roofora/enquiry (or /webhook/ once active) with header X-Roofora-Secret. submissionId must be a fresh UUID v4 and enquiryRef must equal RF- + first 8 hex characters of it, uppercased.",
+  "contractVersion": 1,
+  "source": "roofora-website",
+  "environment": "development",
+  "enquiryRef": "RF-3F2B8C1E",
+  "receivedAt": "2026-10-12T09:00:00.000Z",
+  "submissionId": "3f2b8c1e-5d4a-4b6c-9e7f-0a1b2c3d4e5f",
+  "fullName": "Demo Customer",
+  "phone": "+447700900123",
+  "email": "demo.customer@example.test",
+  "propertyType": "Residential",
+  "service": "Roof Repair",
+  "town": "Croydon",
+  "postcode": "CR0 1AA",
+  "details": "Two slates slipped near the chimney after last week's wind.",
+  "urgency": "This week",
+  "preferredContact": "Email",
+  "photoCount": 0,
+  "consent": {
+    "given": true,
+    "wording": "I agree to be contacted about this enquiry using my preferred contact method.",
+    "version": "contact-permission-v1",
+    "recordedAt": "2026-10-12T09:00:00.000Z"
+  }
+}

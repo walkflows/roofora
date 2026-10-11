@@ -12,3 +12,16 @@ next-env.d.ts
 # Local design reference images (not site assets, not for git)
 /IMAGES TO USE/
 /REFERENCE IMAGES/
+
+# ROOFORA automation: local config (IDs) and import-ready builds. Never commit.
+/automation/config/roofora.config.local.json
+/automation/dist/
+/automation/.scratch/
+
+# Per-machine Claude Code settings (plugin toggles)
+/.claude/settings.local.json
+
+/automation/backups/
+
+# Private test evidence (real ids, addresses)
+/automation/docs/LIVE-TEST-EVIDENCE.md

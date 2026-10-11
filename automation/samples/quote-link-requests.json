@@ -1,0 +1,6 @@
+{
+  "_about": "Bodies the website sends to <n8n>/webhook/roofora/quote. token is the 64-hex secret from the quote email link. 'view' never changes anything.",
+  "view": { "action": "view", "token": "<64 hex characters>" },
+  "accept": { "action": "accept", "token": "<64 hex characters>" },
+  "decline": { "action": "decline", "token": "<64 hex characters>" }
+}

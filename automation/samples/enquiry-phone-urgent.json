@@ -1,0 +1,26 @@
+{
+  "_about": "SYNTHETIC. Phone preference + urgent: expect a priority callback task, a Telegram alert, and NO customer email.",
+  "contractVersion": 1,
+  "source": "roofora-website",
+  "environment": "development",
+  "enquiryRef": "RF-9A1C2D3E",
+  "receivedAt": "2026-10-12T09:05:00.000Z",
+  "submissionId": "9a1c2d3e-4f5a-4b6c-8d7e-1f2a3b4c5d6e",
+  "fullName": "Urgent Demo",
+  "phone": "+447700900456",
+  "email": "",
+  "propertyType": "Commercial",
+  "service": "Storm & Leak Response",
+  "town": "Leeds",
+  "postcode": "LS1 1AA",
+  "details": "Water coming through the warehouse roof.",
+  "urgency": "Urgent active leak/storm damage",
+  "preferredContact": "Phone",
+  "photoCount": 0,
+  "consent": {
+    "given": true,
+    "wording": "I agree to be contacted about this enquiry using my preferred contact method.",
+    "version": "contact-permission-v1",
+    "recordedAt": "2026-10-12T09:05:00.000Z"
+  }
+}
