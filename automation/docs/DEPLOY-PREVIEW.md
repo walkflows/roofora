@@ -57,3 +57,9 @@ Checked against Vercel's current documentation (WAF pages updated Aug–Sep 2026
 | Staff actions (book/cancel/send quote) | ✅ live on the **n8n server**, not the website: HTTP Basic Auth password + same-origin confirm. They are not reachable from the public website at all |
 | Photo upload / quote endpoints | ✅ signed 2-hour upload permission; 64-hex quote token; both throttled |
 Remaining honest gaps: a Hobby rate limit cannot be per-endpoint (one rule), counters are per region, and the n8n server itself is public on the internet (protected by secrets/passwords; consider IP-restricting `/webhook/roofora/staff` at your Hostinger firewall).
+
+# LAUNCHED (11 Oct 2026) — portfolio demo is live
+* Public site: https://roofora-rose.vercel.app (production from `main`; Vercel Authentication now protects previews only). Server-side demo access code and the `/api` rate-limit rule remain.
+* n8n active: Lead Manager (enquiry, photo, quote, staff buttons, daily sweep 'Every Business Morning', Gmail inbox trigger limited to the demo inbox, on-demand webhooks), Send Customer Email, Error Handler. **Airtable Setup Check stays inactive.**
+* Customer Emails Enabled ON with Test Mode ON; allowlist = the demo inbox only (so no visitor ever receives email). Daily Enquiry Limit 5.
+* Pause everything: `node automation/scripts/live-toggle.mjs off` (and/or turn Customer Emails Enabled off in Airtable › Settings).
