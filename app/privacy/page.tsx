@@ -8,9 +8,7 @@ export const metadata: Metadata = {
 };
 
 // This notice describes what the DEMO actually does. It is not legal advice and is not a real company's policy:
-// a real roofing company must replace it with its own approved notice. Items in [square brackets] are intentionally
-// left for the operator to complete — nothing here is invented.
-const TBC = "[to be completed by the operator]";
+// a real roofing company must replace it with its own approved notice.
 
 export default function PrivacyPage() {
   return (
@@ -28,7 +26,10 @@ export default function PrivacyPage() {
         <div className="mt-10 space-y-8 text-ink [&_h2]:mb-2 [&_h2]:text-xl [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
           <div>
             <h2>Who runs this demo</h2>
-            <p>The operator of this demo: {TBC} (name) · contact: {TBC} (email address).</p>
+            <p>
+              This demo is operated by WALKFLOW (web design and AI automation) as a portfolio demonstration. Contact:{" "}
+              <a className="underline" href="mailto:walkflows@gmail.com">walkflows@gmail.com</a>.
+            </p>
           </div>
 
           <div>
@@ -65,7 +66,7 @@ export default function PrivacyPage() {
           <div>
             <h2>How long it is kept and how to have it removed</h2>
             <p>
-              Demo data is deleted by the operator after the demonstration: {TBC} (retention period). To have your test enquiry removed
+              Demo enquiries are kept only for the demonstration and are deleted when it ends, or earlier on request. To have your test enquiry removed
               earlier, contact the operator and quote your reference (it starts with RF-). To stop any further automated email, reply
               STOP to an email you receive.
             </p>
