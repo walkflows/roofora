@@ -1,4 +1,20 @@
-# Preview deployment plan (nothing here has been run)
+# Preview deployment (DONE 11 Oct 2026) and how to run one demonstration
+
+## Status
+* Branch `demo/controlled-preview` pushed (never `main`). Preview URL (stable branch alias): **https://roofora-git-demo-controlled-preview-walkflows-3906.vercel.app** — protected by Vercel Authentication (sign in to the walkflows-3906 team to open it).
+* Preview-only variables set for that branch: `N8N_ROOFORA_WEBHOOK_BASE`, `N8N_ROOFORA_WEBHOOK_SECRET`, `ROOFORA_PHOTO_TOKEN_SECRET`, `ROOFORA_DEMO_ACCESS_CODE`, `ROOFORA_SITE_URL`. Production has none.
+* Airtable Settings › Website URL = the preview address (quote links use it).
+* Vercel firewall: one rate-limit rule "Limit POST /api (demo)": 10 POSTs / 60 s per IP on `/api/*`.
+* Verified on the preview: opens only behind Vercel Authentication; missing/wrong access code → 401; correct code while n8n is paused → 503 "demo is currently paused… nothing was saved" (never success).
+* Production (https://roofora-rose.vercel.app) byte-identical before and after.
+
+## Run ONE controlled demonstration
+1. `node automation/scripts/live-toggle.mjs on` (activates the four n8n workflows).
+2. In Airtable › Settings turn **Customer Emails Enabled** on (keep **Test Mode** on: all mail goes to the test recipient).
+3. Open the preview, enter the demo access code (from `ROOFORA_DEMO_ACCESS_CODE` in your git-ignored `.env.local`; also stored as a hidden Vercel preview variable), submit, record.
+4. Stop: turn **Customer Emails Enabled** off, then `node automation/scripts/live-toggle.mjs off`. Confirm four workflows inactive.
+
+# Original plan (kept for reference)
 
 ## What exists today (inspected read-only on 11 Oct 2026)
 | Item | Finding |
